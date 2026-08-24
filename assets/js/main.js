@@ -10,7 +10,7 @@ let loaderFinished = false;
 function finishLoadingScreen() {
   if (loaderFinished) return;
   loaderFinished = true;
-  const minimumVisibleTime = 1500;
+  const minimumVisibleTime = 1000;
   const remainingTime = Math.max(0, minimumVisibleTime - (performance.now() - loaderStartedAt));
   window.setTimeout(() => document.body.classList.add('loaded'), remainingTime);
 }
