@@ -40,6 +40,16 @@ export function initDynamicBackground() {
         fragment.appendChild(span);
       }
       matrix.replaceChildren(fragment);
+
+      // Keep a scattered baseline of illuminated glyphs so the matrix never
+      // becomes completely dark between animated glow waves.
+      const spans = [...matrix.children];
+      const ambientCount = Math.min(spans.length, Math.max(10, Math.round(spans.length * 0.045)));
+      for (let index = spans.length - 1; index > 0; index -= 1) {
+        const swapIndex = Math.floor(Math.random() * (index + 1));
+        [spans[index], spans[swapIndex]] = [spans[swapIndex], spans[index]];
+      }
+      spans.slice(0, ambientCount).forEach(span => span.classList.add('matrix-ambient-glow'));
     };
 
     const scheduleRandomGlow = (delay = 400) => {
@@ -47,19 +57,19 @@ export function initDynamicBackground() {
       randomGlowTimer = window.setTimeout(() => {
         const spans = matrix.children;
         if (!document.hidden && spans.length > 0) {
-          const glowCount = Math.min(spans.length, 15 + Math.floor(Math.random() * 11));
+          const glowCount = Math.min(spans.length, 24 + Math.floor(Math.random() * 15));
           const selected = new Set();
           let attempts = 0;
           while (selected.size < glowCount && attempts < glowCount * 8) {
             attempts += 1;
             const span = spans[Math.floor(Math.random() * spans.length)];
-            if (!span || activeCells.has(span) || span.classList.contains('matrix-random-glow')) continue;
+            if (!span || activeCells.has(span) || span.classList.contains('matrix-random-glow') || span.classList.contains('matrix-ambient-glow')) continue;
             selected.add(span);
           }
 
           selected.forEach(span => {
             const variant = 1 + Math.floor(Math.random() * 3);
-            const duration = 1300 + Math.round(Math.random() * 900);
+            const duration = 2200 + Math.round(Math.random() * 1100);
             span.style.setProperty('--random-glow-duration', `${duration}ms`);
             span.classList.add('matrix-random-glow', `matrix-random-glow-${variant}`);
             window.setTimeout(() => {
@@ -68,7 +78,7 @@ export function initDynamicBackground() {
             }, duration);
           });
         }
-        scheduleRandomGlow(2700 + Math.round(Math.random() * 900));
+        scheduleRandomGlow(1400 + Math.round(Math.random() * 500));
       }, delay);
     };
 

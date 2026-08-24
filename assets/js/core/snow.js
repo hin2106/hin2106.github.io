@@ -137,9 +137,9 @@ export function initSnowEffect() {
 
   function limits() {
     const mobile = window.innerWidth <= 768;
-    if (performanceTier === 'economy') return { maximum: mobile ? 9 : 13, interval: mobile ? 1050 : 850 };
-    if (performanceTier === 'high') return { maximum: mobile ? 20 : 32, interval: mobile ? 480 : 300 };
-    return { maximum: mobile ? 15 : 24, interval: mobile ? 700 : 470 };
+    if (performanceTier === 'economy') return { maximum: mobile ? 14 : 20, interval: mobile ? 760 : 620 };
+    if (performanceTier === 'high') return { maximum: mobile ? 32 : 48, interval: mobile ? 300 : 190 };
+    return { maximum: mobile ? 23 : 36, interval: mobile ? 440 : 300 };
   }
 
   function chooseEdgeLanding(size) {
@@ -234,7 +234,7 @@ export function initSnowEffect() {
     }, wait);
   }
 
-  const initialCount = reduceMotion ? 3 : (window.innerWidth <= 768 ? 7 : 11);
+  const initialCount = reduceMotion ? 5 : (window.innerWidth <= 768 ? 11 : 18);
   for (let index = 0; index < initialCount; index += 1) {
     window.setTimeout(() => {
       if (!document.hidden) spawnFlake();

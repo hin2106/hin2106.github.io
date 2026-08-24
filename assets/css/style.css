@@ -242,6 +242,11 @@ body {
   line-height: 1;
 }
 
+.jp-matrix > span.matrix-ambient-glow {
+  color: rgba(91, 196, 255, .7);
+  text-shadow: 0 0 7px rgba(58, 188, 255, .64), 0 0 13px rgba(137, 91, 255, .3);
+}
+
 .jp-matrix > span.matrix-random-glow {
   animation: matrixRandomPulse var(--random-glow-duration, 1700ms) ease-in-out 1;
 }
