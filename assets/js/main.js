@@ -2,6 +2,7 @@ import { initDynamicBackground } from './core/background.js';
 import { initSnowEffect } from './core/snow.js';
 import { initZaloQr } from './core/qr.js';
 import { initContentProtection } from './core/protection.js';
+import { initViewCounter } from './core/view-counter.js';
 import { initMusicPlayer } from './components/single-player.js';
 
 const loaderStartedAt = performance.now();
@@ -66,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSnowEffect();
   initZaloQr();
   initContentProtection();
+  initViewCounter();
 });
 
 window.addEventListener('load', finishLoadingScreen, { once: true });

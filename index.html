@@ -245,10 +245,11 @@
 
     <!-- Footer -->
     <footer class="bio-footer">
-      <a class="view-counter" href="https://hits.sh/hin2106.github.io/vdinz-profile/" target="_blank" rel="noopener noreferrer" aria-label="Xem thống kê lượt truy cập">
-        <img src="https://hits.sh/hin2106.github.io/vdinz-profile.svg?view=total&amp;style=flat-square&amp;label=Views&amp;color=d74ab4&amp;labelColor=171020" alt="Page views" decoding="async">
-      </a><br>
       <p>Powered by VDinz</p>
+      <div class="view-counter" role="status" aria-live="polite" aria-label="Đang tải lượt xem">
+        <span class="view-counter__label">Views</span>
+        <span class="view-counter__digits" id="view-counter-digits"></span>
+      </div>
     </footer>
   </main>
 </div>
