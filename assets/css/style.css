@@ -602,6 +602,7 @@ html { scroll-behavior: smooth; }
   line-height: 1.65;
   max-width: min(320px, 100%);
   font-weight: 300;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 .bio-text strong {
   color: var(--text);
