@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ── Charset & Viewport ── -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+  <!-- ── Primary Meta ── -->
+  <title>VDinz — BIO</title>
+  <meta name="description" content="Ham Ăn Lười Làm - Sống Chill Chill. @VDinz-Vy Ngoc Dinh">
+  <meta name="theme-color" content="#0b0b0f">
+
+  <!-- ── Canonical ── -->
+  <link rel="canonical" href="./">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#0b0b0f">
+  <meta name="theme-color" content="#0b0b0f">
+
+  <!-- ── Open Graph ── -->
+  <meta property="og:title"       content="VDinz — PROFILE">
+  <meta property="og:description" content="Ham Ăn Lười Làm - Sống Chill Chill. @VDinz-Vy Ngoc Dinh">
+  <meta property="og:image"       content="assets/images/og-image.png">
+  <meta property="og:image:width"  content="400">
+  <meta property="og:image:height" content="400">
+  <meta property="og:url"         content="./">
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="VDinz Profile">
+  <meta property="fb:app_id"      content="797683330612487">
+
+  <!-- ── Twitter Card ── -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="VDinz — PROFILE">
+  <meta name="twitter:description" content="Ham Ăn Lười Làm - Sống Chill Chill. @VDinz-Vy Ngoc Dinh">
+  <meta name="twitter:image"       content="assets/images/og-image.png">
+
+  <!-- ── Google Fonts ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=Rubik:wght@600;700;800&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=Rubik:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- ── Page Stylesheet ── -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preload" as="image" href="assets/images/qingxiao-display.webp">
+</head>
+<body>
+
+<!-- ── Loading Screen ── -->
+<div class="site-loader" role="status" aria-label="Đang tải trang">
+  <div class="loading-wave" aria-hidden="true">
+    <div class="loading-bar"></div>
+    <div class="loading-bar"></div>
+    <div class="loading-bar"></div>
+    <div class="loading-bar"></div>
+  </div>
+</div>
+
+<!-- ── Animated Gradient Background ── -->
+<div class="gradient-bg">
+  <canvas class="gradient-canvas" aria-hidden="true"></canvas>
+  <div class="jp-matrix" id="jp-matrix" aria-hidden="true"></div>
+</div>
+
+<!-- ── Main content ── -->
+<div class="wrapper">
+
+  <div class="sidebar-wrapper">
+    <aside class="sidebar-section">
+      <div class="cover">
+        <img class="cover-img"
+             src="assets/images/qingxiao-display.webp"
+             alt="Cover photo"
+             width="800"
+             height="220"
+             fetchpriority="high"
+             onerror="this.style.background='linear-gradient(135deg,#1a0533,#0d0d1a)';this.style.display='block'">
+        <div class="cover-overlay" aria-hidden="true"></div>
+        <div class="cover-grid"   aria-hidden="true"></div>
+
+        <div class="player-container cover-player" aria-label="Trình phát Golden Brown">
+          <audio id="bg-music" preload="auto" autoplay></audio>
+          <div class="audio-card-top">
+            <div class="audio-card-pfp" aria-hidden="true">
+              <div class="audio-playing">
+                <i class="audio-greenline line-1"></i><i class="audio-greenline line-2"></i><i class="audio-greenline line-3"></i><i class="audio-greenline line-4"></i><i class="audio-greenline line-5"></i>
+              </div>
+            </div>
+            <div class="audio-card-texts">
+              <div class="audio-title" id="player-track-name">Anh Chỉ Là Người Thay Thế</div>
+              <div class="audio-artist" id="player-track-artist">Mr. Siro</div>
+            </div>
+          </div>
+
+          <div class="audio-controls">
+            <button class="audio-control" id="player-mute" type="button" aria-label="Bật hoặc tắt âm thanh">
+              <svg id="vol-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M11.26 3.691A1.2 1.2 0 0 1 12 4.8v14.4a1.2 1.2 0 0 1-2.048.848L5.503 15.6H2.4a1.2 1.2 0 0 1-1.2-1.2V9.6a1.2 1.2 0 0 1 1.2-1.2h3.103l4.449-4.448a1.2 1.2 0 0 1 1.308-.26Zm6.328-.176a1.2 1.2 0 0 1 1.697 0A11.967 11.967 0 0 1 22.8 12a11.966 11.966 0 0 1-3.515 8.485 1.2 1.2 0 0 1-1.697-1.697A9.563 9.563 0 0 0 20.4 12a9.565 9.565 0 0 0-2.812-6.788 1.2 1.2 0 0 1 0-1.697Z"/></svg>
+            </button>
+            <input type="range" class="audio-volume" id="player-volume" min="0" max="1" step="0.01" value="0.5" aria-label="Âm lượng">
+            <div class="audio-main-controls">
+              <button class="audio-control" id="player-prev" type="button" aria-label="Bài trước">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.8906 4.20444C19.2197 3.31836 21 4.27115 21 5.86854V18.1315C21 19.7289 19.2197 20.6817 17.8906 19.7956L8.69337 13.6641C7.50591 12.8725 7.50591 11.1276 8.69337 10.3359L17.8906 4.20444ZM19 5.86854L9.80277 12L19 18.1315V5.86854Z"/><path d="M5 5C5 4.44772 4.55228 4 4 4C3.44772 4 3 4.44772 3 5V19C3 19.5523 3.44772 20 4 20C4.55228 20 5 19.5523 5 19V5Z"/></svg>
+              </button>
+              <button class="audio-control audio-play" id="player-play-pause" type="button" aria-label="Phát nhạc">
+                <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M21.6 12a9.6 9.6 0 1 1-19.2 0 9.6 9.6 0 0 1 19.2 0ZM9.4 7.8v8.4L16 12 9.4 7.8Z"/></svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path fill-rule="evenodd" clip-rule="evenodd" d="M21.6 12a9.6 9.6 0 1 1-19.2 0 9.6 9.6 0 0 1 19.2 0ZM8.4 9.6a1.2 1.2 0 1 1 2.4 0v4.8a1.2 1.2 0 1 1-2.4 0V9.6Zm6-1.2a1.2 1.2 0 0 0-1.2 1.2v4.8a1.2 1.2 0 1 0 2.4 0V9.6a1.2 1.2 0 0 0-1.2-1.2Z"/></svg>
+              </button>
+              <button class="audio-control" id="player-next" type="button" aria-label="Bài tiếp theo">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.1094 4.20444C4.78029 3.31836 3 4.27115 3 5.86854V18.1315C3 19.7289 4.78029 20.6817 6.1094 19.7956L15.3066 13.6641C16.4941 12.8725 16.4941 11.1276 15.3066 10.3359L6.1094 4.20444ZM5 5.86854L14.1972 12L5 18.1315V5.86854Z"/><path d="M21 5C21 4.44772 20.5523 4 20 4C19.4477 4 19 4.44772 19 5V19C19 19.5523 19.4477 20 20 20C20.5523 20 21 19.5523 21 19V5Z"/></svg>
+              </button>
+            </div>
+            <span class="audio-air" aria-hidden="true"></span>
+            <button class="audio-control audio-favorite" id="player-favorite" type="button" aria-label="Yêu thích bài hát" aria-pressed="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3.343 7.778a4.5 4.5 0 0 1 7.339-1.46L12 7.636l1.318-1.318a4.5 4.5 0 1 1 6.364 6.364L12 20.364l-7.682-7.682a4.501 4.501 0 0 1-.975-4.904Z"/></svg>
+            </button>
+          </div>
+
+          <div class="audio-time" id="player-progress-container" aria-label="Tua bài hát"><div class="audio-elapsed" id="player-progress-bar"></div></div>
+          <span class="audio-timetext audio-time-now" id="player-current-time">0:00</span>
+          <span class="audio-timetext audio-time-full" id="player-duration">0:00</span>
+        </div>
+      </div>
+
+      <div class="profile">
+        <div class="avatar-wrap">
+          <div class="avatar-visual">
+            <div class="avatar-spinner" aria-hidden="true">
+              <div class="avatar-spinner__inner"></div>
+            </div>
+            <img class="avatar-img"
+                 src="assets/avatar/avatar.webp"
+                 alt="VDinz avatar"
+                 width="120"
+                 height="120"
+                 decoding="async"
+                 onerror="this.src='assets/images/og-image.png'">
+          </div>
+          <div class="avatar-status" title="Online" aria-label="Online"></div>
+        </div>
+        <h1 class="username">Vy Định</h1>
+        <p class="bio-text"> Ham Ăn Lười Làm - Sống Chill Chill<br>
+          <strong>@VDinz-Vy Ngoc Dinh</strong><br>
+          <strong>MBBank</strong><br>
+          <strong>8386888999888</strong>
+        </p>
+      </div>
+
+      <nav class="socials" aria-label="Social media links">
+        <a class="social-btn" id="social-tiktok" href="https://www.tiktok.com/@hinz_005" target="_blank" rel="noopener noreferrer" title="TikTok">
+          <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.31 6.31 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.82a8.22 8.22 0 004.81 1.55V6.9a4.85 4.85 0 01-1.04-.21z"/></svg>
+        </a>
+        <a class="social-btn" id="social-facebook" href="https://www.facebook.com/xq206" target="_blank" rel="noopener noreferrer" title="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a class="social-btn" id="social-github" href="https://github.com/hin2106" target="_blank" rel="noopener noreferrer" title="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <button class="social-btn" id="zalo-qr-toggle" type="button" title="Zalo QR" aria-label="Mở mã QR Zalo" aria-expanded="false" aria-controls="zalo-qr-panel">
+          <svg class="zalo-mark" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1.25a10.75 10.75 0 1 0 0 21.5 10.75 10.75 0 0 0 0-21.5Zm0 2a8.75 8.75 0 1 1 0 17.5 8.75 8.75 0 0 1 0-17.5ZM6.7 6.8h10.6v2.35l-6.55 6.05h6.55v2H6.7v-2.35l6.55-6.05H6.7v-2Z"/>
+          </svg>
+        </button>
+      </nav>
+
+      <div class="zalo-qr-panel" id="zalo-qr-panel" aria-hidden="true">
+        <div class="zalo-qr-panel-inner">
+          <div class="zalo-qr-content">
+            <div class="zalo-qr-heading">
+              <span>Zalo QR</span>
+              <small>Quét để kết nối</small>
+            </div>
+            <div class="zalo-qr-shell" aria-label="Mã QR Zalo">
+              <svg id="zalo-qr-svg" viewBox="0 0 45 45" role="img" aria-label="Mã QR Zalo" draggable="false"></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- Main Section (Scrollable on Desktop) -->
+  <main class="main-content">
+    
+    <!-- ── Downloads ── -->
+    <div class="section-label" aria-label="Download files">
+      <svg class="section-label__icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"/>
+      </svg>
+      <span>Downloads</span>
+    </div>
+    <div class="download-list" id="download-list" aria-live="polite">
+      <div class="download-list-message">Đang đọc danh sách file…</div>
+    </div>
+
+    <div class="section-divider" aria-hidden="true">
+      <span></span><div class="divider-dot"></div><span></span>
+    </div>
+
+    <!-- TikTok Card -->
+    <div class="tiktok-card">
+      <div class="tiktok-card__header">
+        <div class="tiktok-card__logo"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.31 6.31 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.82a8.22 8.22 0 004.81 1.55V6.9a4.85 4.85 0 01-1.04-.21z"/></svg></div>
+        <span class="tiktok-card__platform">TikTok</span>
+      </div>
+      <div class="tiktok-card__body">
+        <img class="tiktok-card__avatar" src="assets/avatar/avatar.webp" alt="Avatar" decoding="async" onerror="this.src='assets/images/og-image.png'">
+        <div class="tiktok-card__info">
+          <div class="tiktok-card__name">I Am Hinz</div>
+          <div class="tiktok-card__handle">@hinz_005</div>
+          <div class="tiktok-card__stats">
+            <div class="tiktok-stat"><span class="tiktok-stat__val">15.4M</span><span class="tiktok-stat__lbl">Followers</span></div>
+            <div class="tiktok-stat__sep"></div>
+            <div class="tiktok-stat"><span class="tiktok-stat__val">1.2B</span><span class="tiktok-stat__lbl">Likes</span></div>
+          </div>
+        </div>
+      </div>
+      <a class="tiktok-card__follow" href="https://www.tiktok.com/@hinz_005" target="_blank" rel="noopener noreferrer">Follow on TikTok</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bio-footer">
+      <p>Powered by <a href="#" target="_blank" rel="noopener noreferrer">VDinz</a></p>
+    </footer>
+  </main>
+</div>
+
+<!-- ── Scripts ── -->
+<script src="assets/js/main.js" type="module"></script>
+
+</body>
+</html>
