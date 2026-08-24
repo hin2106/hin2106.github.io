@@ -3,7 +3,6 @@ import { initSnowEffect } from './core/snow.js';
 import { initZaloQr } from './core/qr.js';
 import { initContentProtection } from './core/protection.js';
 import { initMusicPlayer } from './components/single-player.js';
-import { initDownloads } from './components/downloads.js';
 
 const loaderStartedAt = performance.now();
 let loaderFinished = false;
@@ -67,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initSnowEffect();
   initZaloQr();
   initContentProtection();
-  initDownloads();
 });
 
 window.addEventListener('load', finishLoadingScreen, { once: true });
