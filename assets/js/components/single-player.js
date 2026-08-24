@@ -1,11 +1,19 @@
-const FALLBACK_TRACK = {
-  name: 'Anh Chỉ Là Người Thay Thế',
+const PLAYLIST = [
+  'Chạm Đáy Nỗi Đau (Piano Version).mp3',
+  'Cung Bậc Sầu.mp3',
+  'Gương Mặt Lạ Lẫm.mp3',
+  'Lắng Nghe Nước Mắt (Piano Version).mp3',
+  'Một Bước Yêu Vạn Dặm Đau.mp3',
+  'Trái Tim Em Cũng Biết Đau (Piano Version).mp3',
+  'Tự Lau Nước Mắt.mp3',
+  'Yêu Một Người Vô Tâm (Piano Version).mp3'
+].map(file => ({
+  name: file.replace(/\.mp3$/i, ''),
   artist: 'Mr. Siro',
-  file: 'Anh Chỉ Là Người Thay Thế.mp3'
-};
+  file
+}));
 
 const elements = {};
-let playlist = [FALLBACK_TRACK];
 let currentTrackIndex = 0;
 let lastRenderedAt = 0;
 let lastVolume = 0.5;
@@ -60,17 +68,21 @@ function showTrack(track) {
   if (elements.artist) elements.artist.textContent = track.artist;
 }
 
+function getTrackUrl(file) {
+  return new URL(`../../music/${encodeURIComponent(file)}`, import.meta.url).href;
+}
+
 function loadTrack(index, autoplay = false) {
   const audio = elements.audio;
-  if (!audio || playlist.length === 0) return;
-  currentTrackIndex = (index + playlist.length) % playlist.length;
-  const track = playlist[currentTrackIndex];
+  if (!audio || PLAYLIST.length === 0) return;
+  currentTrackIndex = (index + PLAYLIST.length) % PLAYLIST.length;
+  const track = PLAYLIST[currentTrackIndex];
   const currentFile = decodeURIComponent(audio.currentSrc.split('/').pop() || '');
   showTrack(track);
   localStorage.setItem('music_file', track.file);
 
   if (currentFile !== track.file) {
-    audio.src = `/assets/music/${encodeURIComponent(track.file)}`;
+    audio.src = getTrackUrl(track.file);
     audio.load();
   } else if (audio.ended) {
     audio.currentTime = 0;
@@ -100,23 +112,7 @@ function startAutoplay(audio) {
   });
 }
 
-async function fetchPlaylist() {
-  const local = ['localhost', '127.0.0.1'].includes(location.hostname);
-  const endpoints = local ? ['/api/music.php'] : ['/api/music', '/api/music.php'];
-  for (const endpoint of endpoints) {
-    try {
-      const response = await fetch(endpoint, { cache: 'no-store', headers: { Accept: 'application/json' } });
-      const tracks = await response.json();
-      if (!response.ok || !Array.isArray(tracks) || tracks.length === 0) throw new Error('No music files');
-      return tracks.filter(track => track?.file && track?.name && track?.artist);
-    } catch (error) {
-      if (endpoint === endpoints[endpoints.length - 1]) console.warn('[Music]', error);
-    }
-  }
-  return [FALLBACK_TRACK];
-}
-
-export async function initMusicPlayer() {
+export function initMusicPlayer() {
   cacheElements();
   const audio = elements.audio;
   if (!audio || audio.dataset.ready) return;
@@ -183,16 +179,15 @@ export async function initMusicPlayer() {
     setFavorite(isFavorite);
   });
 
-  playlist = await fetchPlaylist();
   const savedFile = localStorage.getItem('music_file');
-  const savedIndex = playlist.findIndex(track => track.file === savedFile);
+  const savedIndex = PLAYLIST.findIndex(track => track.file === savedFile);
   currentTrackIndex = savedIndex >= 0 ? savedIndex : 0;
-  const track = playlist[currentTrackIndex];
+  const track = PLAYLIST[currentTrackIndex];
   showTrack(track);
 
   const currentFile = decodeURIComponent(audio.currentSrc.split('/').pop() || '');
   if (currentFile !== track.file) {
-    audio.src = `/assets/music/${encodeURIComponent(track.file)}`;
+    audio.src = getTrackUrl(track.file);
     audio.load();
   }
 
